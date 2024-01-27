@@ -1,10 +1,10 @@
 package basics.test;
 
 import basics.Calculator;
-import org.junit.Test;
-import static org.junit.Assert.asserEquals;
-
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class CalculatorTest {
 
@@ -14,7 +14,7 @@ public class CalculatorTest {
     }
 
     @ParameterizedTest
-    @MethodSource("dataProviderForAdd")
+    @MethodSource("basics.DataProvider#dataProviderForAdd")
     public void testAddWithDataProvider(int a, int b, int excepted) {
         asserEquals(excepted, Calculator.add(a, b));
     }
